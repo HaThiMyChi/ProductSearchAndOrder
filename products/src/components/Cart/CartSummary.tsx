@@ -2,6 +2,7 @@ import { memo } from "react";
 import type { ICartItem } from "../../types";
 import style from "./style.module.css";
 import CartItem from "./CartItem";
+import { formatVND } from "../../utils/money";
 
 interface Props {
   items: ICartItem[];
@@ -20,7 +21,7 @@ const CartSummary = memo(({ items, updateCartItem = () => void 0 }: Props) => {
       </ul>
       <hr />
       <div className={style["cart-total"]}>
-        <strong>Total:</strong> <span>{total}đ</span>
+        <strong>Total:</strong> <span>{formatVND(total)}</span>
       </div>
     </div>
   );

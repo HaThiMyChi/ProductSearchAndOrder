@@ -1,6 +1,7 @@
 import { memo, type ChangeEvent } from "react";
 import type { ICartItem } from "../../types";
 import style from "./style.module.css";
+import { formatVND } from "../../utils/money";
 
 interface Props {
   item: ICartItem;
@@ -24,7 +25,9 @@ const CartItem = memo(({ item, updateCartItem }: Props) => {
         value={item.qty}
         onChange={(e) => handleChange(e, item)}
       />
-      <span className={style["item-price"]}>{item.price * item.qty}đ</span>
+      <span className={style["item-price"]}>
+        {formatVND(item.price * item.qty)}
+      </span>
     </li>
   );
 });
