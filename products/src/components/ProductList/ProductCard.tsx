@@ -4,9 +4,10 @@ import style from "./style.module.css";
 
 interface Props {
   item: IProduct;
+  onClickAddToCart?: () => void;
 }
 
-const ProductCard = memo(({ item }: Props) => {
+const ProductCard = memo(({ item, onClickAddToCart = () => void 0 }: Props) => {
   return (
     <>
       <div className={style["card"]}>
@@ -16,7 +17,7 @@ const ProductCard = memo(({ item }: Props) => {
           <span className={style["card-text"]}>{item.price}</span>
         </div>
         <div className={style["card-footer"]}>
-          <button>Add to card</button>
+          <button onClick={() => onClickAddToCart()}>Add to card</button>
         </div>
       </div>
     </>
