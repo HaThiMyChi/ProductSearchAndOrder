@@ -28,3 +28,11 @@ export const PRODUCTS = [
     isPrescription: false,
   },
 ];
+
+export const CATEGORIES = [
+  "all",
+  "Pain Relief",
+  "Antibiotic",
+  "Supplement",
+  "Allergy",
+];
